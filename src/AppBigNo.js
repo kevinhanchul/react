@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+function AppBigNo() {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
   const [result, setResult] = useState(0);
@@ -15,11 +15,18 @@ function App() {
   };
 
   const addNumbers = () => {
-    setResult(number1 + number2);    
+    var a=0;
+    if(number1 > number2){
+      a = number1;
+    }
+    else {
+      a = number2;
+    }
+    setResult(a);    
   };
 
   return (
-    <div className="App">
+    <div className="AppBigNo">
       <h1>숫자 두 개 더하기</h1>
       <div>
         <input
@@ -37,7 +44,7 @@ function App() {
           placeholder="두 번째 숫자"
         />
       </div>
-      <button onClick={addNumbers}>더하기</button>
+      <button onClick={addNumbers}>비교하기</button>
       <div>
         <h2>결과: {result}</h2>
       </div>
@@ -45,4 +52,4 @@ function App() {
   );
 }
 
-export default App; 
+export default AppBigNo; 
