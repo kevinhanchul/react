@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
+  //const [result, setResult] = useState(0);
   const [result, setResult] = useState(0);
 
   const handleNumber1Change = (e) => {
@@ -13,9 +14,50 @@ function App() {
   const handleNumber2Change = (e) => {
     setNumber2(Number(e.target.value));
   };
-
+/*
+  //더하기
   const addNumbers = () => {
     setResult(number1 + number2);    
+  };
+*/
+
+/*
+  //비교하기
+  const findBigNo = () => {
+    if (number1 > number2){
+      setResult(number1);    
+    }
+    if (number1 < number2){
+      setResult(number2);    
+    }    
+  };
+*/
+/*
+  //홀수
+  const findOddNo = () => {
+    if (number1 % 2 == 0){
+      setResult("짝수");    
+    }
+    else {
+      setResult("홀수");    
+    }    
+  };
+*/
+
+  //점수별 등급찾기
+  const findScoreGrade = () => {
+    if (number1 >=90){
+      setResult("A");    
+    }
+    else if (number1 >=80) {
+      setResult("B");    
+    }    
+    else if (number1 >=70) {
+      setResult("C");    
+    }    
+    else if (number1 >=60) {
+      setResult("D");    
+    }    
   };
 
   return (
@@ -37,7 +79,7 @@ function App() {
           placeholder="두 번째 숫자"
         />
       </div>
-      <button onClick={addNumbers}>더하기</button>
+      <button onClick={findScoreGrade}>더하기</button>
       <div>
         <h2>결과: {result}</h2>
       </div>
